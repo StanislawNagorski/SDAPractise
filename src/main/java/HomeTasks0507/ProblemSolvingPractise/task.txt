@@ -1,0 +1,74 @@
+UWAGA. Każde zadanie to napisanie jakieś metody, najlepiej niech będą to metody statyczne w tej samej klasie co metoda main (pod nią)
+każdą z metod trzeba przetestować w metodzie main.
+
+
+
+1. Napisać metodę która policzy potege danej liczby całkowitej. Tj. przyjmuje dwa argumenty typu int i zwraca typ long. Nie używać gotowych funkcji w javie. Wywołać stworząną funkcje kilka razy w metodzie main każdy wynik działania wypisać na konsole.
+Oczekiwane działanie:
+
+pow(3, 2) = 9             (3 do potęgi drugiej)
+pow(2, 3) = 8             (2 do potęgi 3)
+
+
+2. Napisać metodę która przyjmuje dowolną liczbę argumentów typu int (skorzystać ze składni zmiennej liczny
+argumetów tak zwane varargs) i zwróci iloczyn tych liczb.
+Oczekiwane działanie:
+
+multiply(2, 3, 6) = 36                --->   (2 * 3 *  6 = 36)
+multiply(1, 2, 2, 8) = 32             --->   (1 * 2 * 2 * 8) = 36
+multiply(1, 2, 2, 1, 1, 2) = 8             --->   (1 * 2 * 2 * 1 * 1 * 2) = 36
+
+
+3. Napisać metodę która przyjmuje jedną liczbę (int) i zwraca sume cyr tej liczby.
+Oczekiwany resultat:
+
+sumOfDigits(45) = 9    ----> (4 + 5 = 9)
+sumOfDigits(28) = 10    ----> (2 + 8 = 10)
+sumOfDigits(11) = 2    ----> (1 + 1 = 2)
+
+
+4. Napisz program, który wyświetli na konsoli amerykańską flagę
+
+Oczekiwane działanie:
+
+* * * * * * ==================================
+ * * * * *  ==================================
+* * * * * * ==================================
+ * * * * *  ==================================
+* * * * * * ==================================
+ * * * * *  ==================================
+* * * * * * ==================================
+ * * * * *  ==================================
+* * * * * * ==================================
+==============================================
+==============================================
+==============================================
+==============================================
+==============================================
+==============================================
+
+
+
+5. Napisać metodę która przyjmuje liczbę całkowitą (int) i zwraca obliczoną silnie tej liczby.
+Oczekiwane dzialanie
+
+silnia(3) = 6           (1 * 2 * 3 = 6)
+silnia(4) = 24			(1 * 2 * 3 * 4 = 24)
+silnia(5) = 120			(1 * 2 * 3 * 4 * 5 = 120)
+
+napisać to samo zadanie w wersji rekurencyjnej.
+
+6. Napisz metodę która przyjmuje liczbę całkowitą (int), która będzie oznaczać liczbę sekund. Metoda ma zwracać string który będzie wskazywał ile to jest godzin minut i sekund.
+Oczekiwany resultat:
+
+calculateSecondsToTime(86399) = "23:59:59"          (bo 86399 sekund to 23 godziny, 59 minut i 59 sekund)
+
+
+7. Napisz program, który przjmuje tablicę liczb (int) i zwraca tablicę liczb, która jest odwróconą talicę tej która przyszła jako argumenty
+Oczekiwane działanie:
+
+int[] liczby = {1, 45, 564, 7867, 34, 5456, 210};
+reverseTable(liczby) = (210, 5456, 34, 7867, 564, 45, 1)
+
+
+8. Napisać metodę która przyjmuje tablicę liczb i sprawdzić czy tablica liczb jest palindromem. Zwrócić true lub false
