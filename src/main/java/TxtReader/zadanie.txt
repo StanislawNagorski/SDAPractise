@@ -1,0 +1,19 @@
+Założenia do zadania:
+Na dysku w z góry określonej lokalizacji znajduje się plik tekstowy, który zawiera dane w następujący sposób;
+pesel;wysokosc_emerytury
+Przykład:
+Jan;Kowalski;50121230965;2000
+49116573390;1500
+44859483920;3000
+Napisz program, który:
+Wczyta dane z pliku:
+Wypisze na konsole wysokosc pensji emeryta. Emeryt będzie wybrany na podstawie argumentu (peselu) przekazango jako paramert wywołania programu.
+Zwiekszy wysokosc emerytury o 5% emeryta o podanym peselu. Emeryt będzie wybrany na podstawie argumentu (peselu) przekazango jako paramert wywołania programu.
+Pisząc program należy napisąć go tak aby dokonanie zmiany w programie było łatwe i 1 zmiana nie miała lub miała minimalny wpływ na resztę programu.
+Rzeczami które mogą się zmianiać są.
+- Sposób pobierania danych o użytkowniku np. zamiast z pliku dane będą pobierane bazy danych lub z serwisu (np. RESTOWEGO)
+- Sposób wyświetlania danych np. Zamist na konsoli dane będą wyświetlana w okienku windowsowym w jakieś kontrolce.
+Ocenianę będą
+- Poprawność działania programu
+- Czystoć kodu - sposób nazywania, klas, zmiennych, dobre zasady programowania
+- Umiejętność programowania obiektowego, abstrakcja, enkapsulacja, dziedziczenie interfejsy itp.

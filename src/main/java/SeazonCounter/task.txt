@@ -1,0 +1,17 @@
+Napisać metodę która przyjmuje String i liczbę i która zwraca String. Nazwę metody proponuję addSeason.
+Przekazany String jest postaci: "RokXY" gdzie XY to "11" lub "12" lub "21" lub "22" a rok to rok :)
+Przykład:
+"201012"
+"202022"
+"201811"
+String taki oznacza sezon np:
+"201911" to jest zima 2019
+"202012" to jest wiosna 2020
+"201821" to jest lato 2018
+"202122" to jest jesien 2021
+druga liczba przekazana jako argument to ile sezonów chcemy dodoć to następnego.
+
+Przykład działania metody:
+addSeason("201911", 0) ----> "201911" (ten sam czyli + 0 to ten sam sezon)
+addSeason("202012", 1) ----> "202021" (+ 1 to następny seson)
+addSeason("201821", 2) ----> "201911" (+ 2 to następne 2 sezony, w tym przypadku wstakuje na następny rok)

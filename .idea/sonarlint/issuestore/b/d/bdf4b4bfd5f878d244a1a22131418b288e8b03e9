@@ -1,0 +1,11 @@
+
+b	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(şö×«8Û×£Î±.
+Z	java:S106/"9Replace this use of System.out or System.err by a logger.(®ıáëûÿÿÿÿ8Áû¦Î±.
+F
+java:S1128
+")Remove this unused import 'java.net.URI'.(Ö¦¨°8¸¹Î±.
+Z	java:S106)"9Replace this use of System.out or System.err by a logger.(‚é€Şûÿÿÿÿ8ÔãƒÏ±.
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(÷ÛãÓûÿÿÿÿ
+X
+java:S1128	";Remove this unused import 'java.net.MalformedURLException'.(ªËŞˆ8†’Î±.
+Z	java:S106'"9Replace this use of System.out or System.err by a logger.(©¬èùÿÿÿÿ8‘¶üÎ±.

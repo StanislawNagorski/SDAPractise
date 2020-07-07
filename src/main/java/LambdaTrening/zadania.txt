@@ -1,0 +1,43 @@
+Nazwiska: Stworzyć sobie np. w metodzie main listę Stringów i dodać do niej kilkanaście nazwisk. Następnie
+Następnie korzystająć z strumieni, metod na strumieniach oraz wyrażeń lambda stworzyć kolekcję (dobrać odpowiednią) która zawiera:
+
+
+1) Wszystkie nazwiska o długości co najwyżej 4 znaków, zapisane wielkimi literami    ----> podpowiedz: użyć między innymi map()
+2) Wszystkie nazwiska zaczynające się na literę 'B'
+3) Początkowe trzy litery wszystkich nazwisk, bez powtórzeń, z małych liter   ----> podpowiedz: użyć między innymi map()
+4) 10 najdłuższych nazwisk, posortowanych malejąco według długości  ----> podpowiedz: użyć między innymi sorted()
+4*) Obsłuż miejsca "ex aequo"
+5) 20 najkrótszych nazwisk, posortowanych według ostatniej litery  ----> podpowiedz: użyć między innymi limited() i sorted()
+6) Odwróć kolejność liter we wszystkich nazwiskach i pozstaw jedynie te, które mają literę 'A' wsród pierwszych trzech liter (odwróconego nazwiska)
+7) Policz, ile jest nazwisk zaczynających się na każdą z liter alfabetu (rezultat jako Map<Character, Integer>)
+8*) Jaka litera pojawia się najcześciej we wszystkich nazwiskach?
+
+wszystko na zasadzie --> listaNazwis.stream().[odpowiednie metody i odopwiednie wyrażenie lambda]
+===================================================================================================================================================
+Liczby:
+Stworzyć sobie np. w metodzie main listę Integerow i dodać do niej kilkanaście/kiladziesią liczb. Następnie
+Następnie korzystająć z strumieni, metod na strumieniach oraz wyrażeń lambda uzyskać odpowiedź na pytania:
+Podpiwiedz ogólna: zobaczyć jak działają metody: count(), mapToInt(), average(), limit(), max(), min()
+
+
+1) Ile jest liczb parzystych?
+2) Ile jest liczb pięciocyfrowych?
+3) Jaka jest największa i najmniejsza liczba?
+4) Jaka jest różnica między największa a najmniejszą liczbą?
+5) Jaka jest średnia wszystkich liczb?
+6*) Jaka jest mediana wszystkich liczb?
+7*) Jaka cyfra pojawia się najczęściej we wszystkcih liczbach?
+8*) Ile jest wystąpień każdej cyfry (rezultat jako Map<Integer, Integer> z kluczami od 0 do 9)
+9) Wypisz wszystkie liczby pierwsze, posortowane rosnąco
+
+
+===================================================================================================================================================
+Lorem ipsum:
+Stworzyć listę Stringów która zawiera słowa tekstu lorem impsum. Za pomocą strumieni, wyrażeń labmda obliczyć:
+
+1) Ile jest wszystkich słów?
+2) Ile słów zaczyna się na literę 'D'?
+3) Policz, ile jest słów o danej długości (Map<Integer, Integer>)
+4) Jaka litera pojawia się narzadziej?
+5*) Ile jest słów, które posiadają dwie identyczne litery obok siebie (np. 'g' w "debugger")?
+6**) Ile jest słów, które są palindromami?
