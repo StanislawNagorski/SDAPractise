@@ -25,3 +25,13 @@ _
 /src/main/java/ChuckNorrisJokeGetter/zadanie.txt,d\0\d0fbcc08b3b58263c1b7aa5add8a2f1aef2f602c
 c
 3src/main/java/ChuckNorrisJokeGetter/JokeGetter.java,b\d\bdf4b4bfd5f878d244a1a22131418b288e8b03e9
+h
+8src/main/java/HomeTasks0507/SimpleWebbStore/Product.java,f\7\f7e7b7fa38fa482c6b470b1a4bcd8b7b0d5beebd
+k
+;src/main/java/HomeTasks0507/ProblemSolvingPractise/task.txt,1\e\1e790d9cfe6f5d3fc78aefdc0f0e77632d26f009
+d
+4src/main/java/HomeTasks0507/SimpleWebbStore/task.txt,b\a\babda5fdd4b8d9f3b5f0447087b002af709c8f20
+e
+5src/main/java/HomeTasks0507/SimpleWebbStore/User.java,c\9\c9b83a54d992bca18c071f203e6ea347eeb8f9cf
+f
+6src/main/java/HomeTasks0507/SimpleWebbStore/Store.java,2\0\207253f66a2c922f14b614dba19392e28550b731

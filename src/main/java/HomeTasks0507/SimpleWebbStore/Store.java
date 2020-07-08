@@ -25,12 +25,12 @@ public class Store {
     }
 
     public boolean removeProduct(Product productToRemove){
-        for (Product product : productList) {
-            if(productToRemove.equals(product)){
-                return productList.remove(product);
-            }
-        }
-        return false;
+//        for (Product product : productList) {
+//            if(productToRemove.equals(product)){
+//                return productList.remove(product);
+//            }
+//        }
+        return productList.remove(productToRemove);
     }
 
     public int getProductQuantity(String productToReturnQuantityName){
@@ -41,23 +41,6 @@ public class Store {
         }
         return -1;
     }
-
-    public static void main(String[] args) {
-        Store store = new Store();
-
-        List<Product> list = store.getProductList();
-        System.out.println(list);
-        Product toAddAndRemove = new Product();
-        store.addProduct(toAddAndRemove);
-        System.out.println(list);
-        store.removeProduct(toAddAndRemove);
-        System.out.println(list);
-        int productQuantity = store.getProductQuantity("HEMA Sabre");
-        System.out.println(productQuantity);
-
-
-    }
-
 
 }
 

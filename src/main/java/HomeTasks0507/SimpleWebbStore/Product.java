@@ -9,6 +9,8 @@ public class Product {
     private double promoPrice;
     private double vat;
     private int quantity;
+    private static int codeCounter = 700;
+    private int code;
 
     public Product(String name, double price, boolean isPromo, double promoPrice, double vat, int quantity) {
         this.name = name;
@@ -17,9 +19,15 @@ public class Product {
         this.promoPrice = promoPrice;
         this.vat = vat;
         this.quantity = quantity;
+        code = ++ codeCounter;
     }
 
+
     public Product() {
+    }
+
+    public int getCode() {
+        return code;
     }
 
     public String getName() {
@@ -78,8 +86,9 @@ public class Product {
 
         return "Product{" +
                 "name='" + name + '\'' +
-                '}';
+                '}' ;
     }
+
 }
 
 

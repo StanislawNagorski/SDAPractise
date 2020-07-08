@@ -6,14 +6,19 @@ public class User {
     private String surname;
     private String login;
     private String password;
+    public static int idCounter = 0;
     private int id;
 
-    public User(String name, String surname, String login, String password, int id) {
+    public User(String name, String surname, String login, String password) {
         this.name = name;
         this.surname = surname;
         this.login = login;
         this.password = password;
-        this.id = id;
+        id = ++ idCounter;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public User() {
@@ -50,6 +55,13 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    @Override
+    public String toString() {
+        return  name + " " + surname + " " + login + " " + id;
+    }
+
+
 }
 
 
