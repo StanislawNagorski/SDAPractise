@@ -25,11 +25,9 @@ public class Store {
     }
 
     public boolean removeProduct(Product productToRemove){
-//        for (Product product : productList) {
-//            if(productToRemove.equals(product)){
-//                return productList.remove(product);
-//            }
-//        }
+        if (!productList.contains(productToRemove)){
+            return false;
+        }
         return productList.remove(productToRemove);
     }
 

@@ -26,6 +26,9 @@ public class UserData {
     }
 
     public boolean removeUser(User user) {
+        if (!userList.contains(user)){
+            return false;
+        }
         User.idCounter--;
         return userList.remove(user);
     }
