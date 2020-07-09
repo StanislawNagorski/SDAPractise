@@ -45,3 +45,7 @@ d
 4src/main/java/HomeTasks0507/SimpleWebbStore/App.java,d\2\d2e6b52b9bb72fe5e9cee9dff0d2ee7a3c508bb7
 i
 9src/main/java/HomeTasks0507/SimpleWebbStore/UserData.java,d\c\dc24a33465a58e0fcbd4a25813dc2005d54ed3f0
+c
+3src/main/java/HomeTasks0507/designPatterns/homeWork,b\c\bc3a50fcff744991d1f19c29140973734febe91e
+p
+@src/main/java/HomeTasks0507/ProblemSolvingPractise/HomeWork.java,5\c\5c9f3076b435cfb988b454940d426a4ee655375f

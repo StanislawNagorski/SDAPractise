@@ -48,10 +48,11 @@ public class HomeWork {
         }
         int result = 0;
         result += number % 10;
-        int rest = number / 10;
+        int anotherDigitsToPassOn = number / 10;
 
-        return result + addDigitsInNumber(rest);
+        return result + addDigitsInNumber(anotherDigitsToPassOn);
     }
+
 
 //    4. Napisz program, który wyświetli na konsoli amerykańską flagę
 
@@ -161,7 +162,6 @@ public class HomeWork {
         System.out.println("To jest polidorm, powinno być true: " + palidromCheck(isIsPolidrom));
         System.out.println("To NIE jest polidorm, powinno być false: " + palidromCheck(thisIsNotPolidorm));
         System.out.println("To jest polidorm, powinno być true:  " + palidromCheck(andThisOneIsTricky));
-
 
     }
 }
