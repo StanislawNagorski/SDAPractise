@@ -1,4 +1,4 @@
-package HomeTasks0507.designPatterns;
+package HomeTasks0507.designPatterns.Singelton;
 
 import java.io.*;
 
@@ -11,7 +11,7 @@ public class SingletonLogger {
 
     private SingletonLogger() {
 
-        file = new File("src/main/java/HomeTasks0507/designPatterns/logs.txt");
+        file = new File("src/main/java/HomeTasks0507/designPatterns/Singelton/logs.txt");
         try {
             printWriter = new PrintWriter(file);
         } catch (FileNotFoundException e) {
@@ -24,11 +24,11 @@ public class SingletonLogger {
     }
 
 
-    public void log(String logs){
-       printWriter.println(logs);
+    public void log(String logs) {
+        printWriter.println(logs);
     }
 
-    public void closeLogs(){
+    public void closeLogs() {
         printWriter.close();
     }
 
@@ -40,8 +40,8 @@ public class SingletonLogger {
         SingletonLogger.INSTANCE.log("Tres!");
         SingletonLogger.INSTANCE.closeLogs();
 
-        SingletonLogger singletonLogger = new SingletonLogger();
-
+        //TODO dlaczego nie następuje zapis do pliku??
+        //SingletonLogger singletonLogger = new SingletonLogger();
     }
 
 }

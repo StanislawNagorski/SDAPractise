@@ -16,9 +16,6 @@ Do oblicznia podatku powinna zostać uzyta klasa (strategia) "KalkulatorPodatku"
 Interfej KalkulatorPodatku powinien mieć jedną metodę opliczPodatek przyjmującą listę produktów.
 Stworzyć 2-3 implementacje interfejsu KalkulatorPodatku np. KalkulatorPodatkuPolska, KalkulatorPodatkuUE, KalkulatorPodatkuUSA
 
-
-
-
 =================================================================
 Adapter ---> Shape(draw, getObwod), Circle(print, calculateObwod)
 Napisać Interfej Shape (kształt) z metodami drow(rysuj)
