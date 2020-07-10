@@ -1,7 +1,10 @@
 package LambdaTrening;
 
 import java.util.*;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.*;
 
 public class LambdaPractise {
 
@@ -54,7 +57,7 @@ public class LambdaPractise {
 
         Set<String> uniqThree = listToPlayWith.stream()
                 .map(s -> s.substring(0, 3))
-                .collect(Collectors.toSet());
+                .collect(toSet());
         System.out.println(uniqThree);
 
         //4) 10 najdłuższych nazwisk, posortowanych malejąco według długości  ----> podpowiedz: użyć między innymi sorted()
@@ -84,14 +87,7 @@ public class LambdaPractise {
         //6) Odwróć kolejność liter we wszystkich nazwiskach i pozstaw jedynie te, które mają literę 'A' wsród pierwszych trzech liter (odwróconego nazwiska)
         List<String> collect1 = listToPlayWith.stream()
                 .map(s -> {
-                    //TODO stringbuilder ma metode do odwracania
-                    String sTrim = s.trim();
-                    StringBuilder stringBuilder = new StringBuilder();
-                    for (int i = sTrim.length() - 1; i >= 0; i--) {
-                        char tempChar = sTrim.charAt(i);
-                        stringBuilder.append(tempChar);
-                    }
-                    return stringBuilder.toString();
+                    return new StringBuilder(s).reverse().toString();
                 })
                 .filter(s -> s.substring(0, 3).contains("a"))
                 .collect(Collectors.toList());
@@ -99,18 +95,21 @@ public class LambdaPractise {
 
         //7) Policz, ile jest nazwisk zaczynających się na każdą z liter alfabetu (rezultat jako Map<Character, Integer>)
         //TODO czytaj collector i grupby
-        Map<Character, Integer> mapOfFistLettersOccurance = new HashMap<>();
-        for (char i = 'a'; i < 'z'; i++) {
-            mapOfFistLettersOccurance.put(i, 0);
-        }
-        listToPlayWith.stream()
+
+        Map<Character, Long> collect2 = listToPlayWith.stream()
                 .map(String::toLowerCase)
-                .map(s -> s.charAt(0))
-                .map(character -> {
-                    int counter = mapOfFistLettersOccurance.get(character);
-                    return mapOfFistLettersOccurance.replace(character, counter + 1);
-                });
-        System.out.println(mapOfFistLettersOccurance);
+                .sorted((o1, o2) -> o1.charAt(0)-o2.charAt(0))
+                .collect(groupingBy(s -> s.charAt(0), counting()));
+        System.out.println(collect2);
+        //TODO czy można zwrócić wszystkie litery alfabetu?
+
+        //8*) Jaka litera pojawia się najcześciej we wszystkich nazwiskach?
+
+        Optional<Map.Entry<Character, Long>> collect3 =
+                collect2.entrySet().stream()
+                        .max((o1, o2) -> (int) (o1.getValue() - o2.getValue()));
+
+        System.out.println(collect3);
 
     }
 }
