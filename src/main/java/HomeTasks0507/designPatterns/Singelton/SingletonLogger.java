@@ -19,7 +19,7 @@ public class SingletonLogger {
         }
 
         if (INSTANCE != null) {
-            throw new IllegalStateException("Singleton already constructed");
+            throw new IllegalStateException("Singleton może być tylko jeden");
         }
     }
 
@@ -40,7 +40,7 @@ public class SingletonLogger {
         SingletonLogger.INSTANCE.log("Tres!");
         SingletonLogger.INSTANCE.closeLogs();
 
-        //TODO dlaczego nie następuje zapis do pliku??
+        //TODO dlaczego nie następuje zapis do pliku, kiedy wywołuję konstruktor?
         //SingletonLogger singletonLogger = new SingletonLogger();
     }
 

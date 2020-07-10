@@ -13,6 +13,7 @@ public class Order {
         this.adress = adress;
         this.productList = productList;
 
+        //TODO: czy to jest poprawne zaimplementowanie contextu?
         if (adress.contains("USA")){
             taxCalculator = new TaxCalcUSA();
         } else {
