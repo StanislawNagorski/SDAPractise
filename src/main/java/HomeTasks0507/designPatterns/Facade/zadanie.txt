@@ -1,0 +1,22 @@
+Fasada:
+
+Dane mamy systemy: SystemHotelowy, SystemLotow, SystemTaxi, WystemWynajmuAut.
+każdy system posiada interfejs w skład które wchodzi metoda do rezerwacji wykonująca
+rezerwację w danym systemie i zwracająca obiekt potwierdzenia (Potwierdzenie)
+Napisać fasadę SystemBiurPodrozy z metodą zarezerwujWycieczke. Fasada powinna wykonać metody poszczególnych
+systemów tak aby uzyskać (w podanej kolejności) następujące potwierdzenia z systemów.
+
+potwierdzenieLotuDocelowego
+potwierdzenieTaxiZLotniska
+potwierdzenieHotelu
+potwierdzenieTaxiNaLotnisko
+potwierdzenieLotuPowrotnego
+
+jeśli zrealizowanie wszystkich zleceń przebiegnie prawidłowo metoda zarezerwujWycieczke powinna
+również zwrócić potwierdzenie wycieczki.
+
+metoda zarezerwuj wycieczkę powinna pobierać następujące parametry:
+
+- String miastoDocelowe,
+- LocalDate dataPoczątkuWycieczki,
+- int dlugoscWycieczki
