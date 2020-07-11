@@ -1,0 +1,21 @@
+Obserwer ---> Button (SmsSender, EmailSender)
+
+Stworzyć dwa Intervfejsy pierwszy "Observable" będzie reprezentował obiekt są jest nasłuchiwany/obserwowany z metodami:
+addLisneter(Listener observer)  ---> metoda rejestruąca obserwatora/nasłuchiwacza
+removeListener(Listener listener)  ----> metoda usuwająca obserwatora/nasłuchującego
+notifyListeners() ---> metoda która w momencie zajścia jakiegoś zdarzenia  aktualizuje wszystkich naśluchujących.
+
+Drugi interfejs (już użyty w powyższych sygnaturach metod) tj. "Listener" reprezentuje obiekt nasłuchujący/obserwujący,
+powinien on posiadać jedną metodę - update(), która jest wykonywana w kiedy zachodzi jakieś zdarzenie w obiekcie nasłuchiwanym.
+
+Zaimplementować powyższe interfejsy w następujący sposób:
+Niech obiektem nasłuchiwanym (spełniającym interfejs Observable) będzie Przycisk (Button). W przyciwsku oprócz implementacji interfesu dodać metodę, która będzie
+udawać kliknięcie np. click(). Metoda click powinna spowodować powiadomonie wszystkich nasłuchujących (wywołać notifiyListeners).
+
+Następnie zaimplementować 2-3 obiekty nasłuchujące przycisk np. EmailSender, SmsSender, każdy w swojej metodzie update powinien
+symulować jakieś działanie np. wysłanie maila, wysłanie smsa (nie na znaczenia jak może być równie dobrze sout "Wysyłam smsa".
+
+Na koniec spinamy nasze klasy.
+W mainie tworzymy button i dodajemy do niego 2-3 obserwatorów (addListener) następnie wywołujemy symulację kliknięcia tj. button.click()
+
+Podpowiedź: poszukać jak obiekt obserwowany zwykle przechowuje obiekty nasłuchujące. Jeśli nie znajdziecie zapytać trenera :)

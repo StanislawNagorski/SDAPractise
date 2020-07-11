@@ -26,9 +26,6 @@ public class SingletonLogger {
 
     public void log(String logs) {
         printWriter.println(logs);
-    }
-
-    public void closeLogs() {
         printWriter.close();
     }
 
@@ -38,10 +35,7 @@ public class SingletonLogger {
         SingletonLogger.INSTANCE.log("Uno!");
         SingletonLogger.INSTANCE.log("Duo!");
         SingletonLogger.INSTANCE.log("Tres!");
-        SingletonLogger.INSTANCE.closeLogs();
 
-        //TODO dlaczego nie następuje zapis do pliku, kiedy wywołuję konstruktor?
-        //SingletonLogger singletonLogger = new SingletonLogger();
     }
 
 }

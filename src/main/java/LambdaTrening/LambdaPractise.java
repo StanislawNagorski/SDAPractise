@@ -101,6 +101,7 @@ public class LambdaPractise {
                 .sorted((o1, o2) -> o1.charAt(0)-o2.charAt(0))
                 .collect(groupingBy(s -> s.charAt(0), counting()));
         System.out.println(collect2);
+
         //TODO czy można zwrócić wszystkie litery alfabetu?
 
         //8*) Jaka litera pojawia się najcześciej we wszystkich nazwiskach?
