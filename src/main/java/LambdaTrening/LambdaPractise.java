@@ -1,8 +1,10 @@
 package LambdaTrening;
 
 import java.util.*;
+import java.util.Map.Entry;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.*;
 
@@ -94,23 +96,177 @@ public class LambdaPractise {
         System.out.println(collect1);
 
         //7) Policz, ile jest nazwisk zaczynających się na każdą z liter alfabetu (rezultat jako Map<Character, Integer>)
-        //TODO czytaj collector i grupby
 
         Map<Character, Long> collect2 = listToPlayWith.stream()
                 .map(String::toLowerCase)
-                .sorted((o1, o2) -> o1.charAt(0)-o2.charAt(0))
+                .sorted((o1, o2) -> o1.charAt(0) - o2.charAt(0))
                 .collect(groupingBy(s -> s.charAt(0), counting()));
         System.out.println(collect2);
 
-        //TODO czy można zwrócić wszystkie litery alfabetu?
-
         //8*) Jaka litera pojawia się najcześciej we wszystkich nazwiskach?
 
-        Optional<Map.Entry<Character, Long>> collect3 =
+        Optional<Entry<Character, Long>> collect3 =
                 collect2.entrySet().stream()
                         .max((o1, o2) -> (int) (o1.getValue() - o2.getValue()));
 
         System.out.println(collect3);
 
+        //3.1 LoremIpsum
+        List<String> listLorem = LoremIpsum.loremToList();
+
+        //1) Ile jest wszystkich słów?
+        long count = listLorem.stream().count();
+        int size = listLorem.size();
+        System.out.println(count == size);
+
+        //2) Ile słów zaczyna się na literę 'D'?
+        long count1 = listLorem.stream()
+                .map(s -> s.toUpperCase().charAt(0))
+                .filter(character -> character == 'D')
+                .count();
+        System.out.println("Na d mamy:" + count1);
+
+        //33) Policz, ile jest słów o danej długości (Map<Integer, Integer>)
+        Map<Integer, Long> collect4 = listLorem.stream()
+                .collect(groupingBy(s -> s.length(), counting()));
+        System.out.println(collect4);
+
+        //4) Jaka litera pojawia się narzadziej?
+        Optional<Entry<String, Long>> min = Stream.of(LoremIpsum.lorem
+                .toUpperCase()
+                .split("\\B|\\W"))
+                .filter(s -> !(s.isBlank()))
+                .collect(groupingBy(s -> s, counting()))
+                .entrySet().stream()
+                .min((o1, o2) -> (int) (o1.getValue() - o2.getValue()));
+
+        String lessPopularLetter = min.map(Entry::getKey).orElse("Pusto :(");
+
+        System.out.println("Najrzadziej występuje litera:" + lessPopularLetter);
+
+        //5*) Ile jest słów, które posiadają dwie identyczne litery obok siebie (np. 'g' w "debugger")?
+
+        long count2 = listLorem.stream()
+                .filter(s -> {
+                    for (int i = 0; i < s.length() - 1; i++) {
+                        if (s.charAt(i) == s.charAt(i + 1)) {
+                            return true;
+                        }
+                    }
+                    return false;
+
+                })
+                .count();
+
+        System.out.println(count2 + " -> tyle jest wyrazów gdzie lotery powtarzają się obok siebie");
+
+        //6**) Ile jest słów, które są palindromami?
+
+        long count3 = listLorem.stream()
+                .filter(s -> s.equalsIgnoreCase(new StringBuilder(s).reverse().toString()))
+                .count();
+
+        System.out.println(count3 + " -> tyle jest palidromów w Lorem");
+
+        //        Liczby:
+//        Stworzyć sobie np. w metodzie main listę Integerow i dodać do niej kilkanaście/kiladziesią liczb. Następnie
+//        Następnie korzystająć z strumieni, metod na strumieniach oraz wyrażeń lambda uzyskać odpowiedź na pytania:
+//        Podpiwiedz ogólna: zobaczyć jak działają metody: count(), mapToInt(), average(), limit(), max(), min()
+
+        List<Integer> integerList = new ArrayList<>();
+        integerList.add(12);
+        integerList.add(2);
+        integerList.add(212);
+        integerList.add(123);
+        integerList.add(120);
+        integerList.add(13);
+        integerList.add(12443);
+        integerList.add(155555);
+        integerList.add(412);
+
+        //1) Ile jest liczb parzystych?
+        long count5 = integerList.stream()
+                .filter(integer -> integer % 2 == 0)
+                .count();
+        System.out.println("parzystych jest: " + count5);
+
+        //2) Ile jest liczb pięciocyfrowych?
+
+        long count4 = integerList.stream()
+                .filter(integer -> integer % 5 == 0)
+                .count();
+        System.out.println("Pięcio cyfrowych jest " + count4);
+
+        //3) Jaka jest największa i najmniejsza liczba?
+
+        Integer integer1 = integerList.stream()
+                .max((o1, o2) -> o1 - o2)
+                .orElse(0);
+
+        System.out.println("najwieksza to " + integer1);
+
+        Integer integer2 = integerList.stream()
+                .min((o1, o2) -> o1 - o2)
+                .orElse(0);
+
+        System.out.println("najmniejsza to :" + integer2);
+        //4) Jaka jest różnica między największa a najmniejszą liczbą?
+        System.out.println("różnica to: " + (integer1 - integer2));
+
+        //5) Jaka jest średnia wszystkich liczb?
+        Double collect5 = integerList.stream()
+                .collect(averagingInt(Integer::intValue));
+        System.out.println("srednia to:" + collect5);
+        //6*) Jaka jest mediana wszystkich liczb?
+        Double mediana = integerList.stream()
+                .sorted()
+                .skip(integerList.size() / 2)
+                .limit(2)
+                .collect(averagingInt(Integer::intValue));
+        System.out.println("uśredniona mediana to: " + mediana);
+
+        Integer mediana1 = integerList.stream()
+                .sorted()
+                .skip(integerList.size() / 2)
+                .findFirst()
+                .orElse(Integer.MIN_VALUE);
+        System.out.println("klasyczna mediana" + mediana1);
+
+        //7*) Jaka cyfra pojawia się najczęściej we wszystkcih liczbach?
+        String mostPopularDigit = integerList.stream()
+                .map(integer -> String.valueOf(integer))
+                .flatMap(s -> (Stream.of(s.split("\\B"))))
+                .collect(groupingBy(s -> s, counting()))
+                .entrySet().stream()
+                .max((o1, o2) -> (int) (o1.getValue() - o2.getValue()))
+                .map(Entry::getKey).orElse("FAIL");
+
+        System.out.println(mostPopularDigit + " jest najpopularniejsza cyfra");
+
+        //8*) Ile jest wystąpień każdej cyfry (rezultat jako Map<Integer, Integer> z kluczami od 0 do 9)
+
+        Map<Integer, Long> collect6 = integerList.stream()
+                .map(integer -> String.valueOf(integer))
+                .flatMap(s -> (Stream.of(s.split("\\B"))))
+                .collect(groupingBy(s -> Integer.valueOf(s), counting()));
+        System.out.println(collect6);
+
+        //9) Wypisz wszystkie liczby pierwsze, posortowane rosnąco
+
+        List<Integer> collect7 = integerList.stream()
+                .filter(integer -> {
+                    for (int i = 2; i < integer; i++) {
+                        if (integer % i == 0) {
+                            return false;
+                        }
+                    }
+                    return true;
+                })
+                .sorted()
+                .collect(toList());
+        System.out.println("Liczby pierwsze rosnąco: " + collect7);
+
+
     }
+
 }

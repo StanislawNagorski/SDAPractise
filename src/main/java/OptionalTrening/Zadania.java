@@ -1,5 +1,7 @@
 package OptionalTrening;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 public class Zadania {
@@ -33,6 +35,9 @@ public class Zadania {
                 .map(Country::getCountyCode)
                 .orElse("lack of country code");
         System.out.println(lackOfCountryCode);
+
+
+
 
     }
 }
